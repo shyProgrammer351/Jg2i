@@ -319,9 +319,9 @@
 </table>
 
 <br>
-<span style='color:red;'>오버로딩(overloading)</span> &nbsp; 한 클래스에 이름과 반환값의 자료형은 동일하지만 전달인자가 서로 다른 메서드
+<span style='color:red;'>overloading</span> &nbsp; 한 클래스에 이름과 반환값의 자료형은 동일하지만 전달인자가 서로 다른 메서드
 <br>
-<br><span style='color:red;'>오버라이딩(overriding)</span> &nbsp; 부모 클래스와 자식 클래스에 이름, 반환값의 자료형, 전달인자가 모두 동일한 메서드
+<br><span style='color:red;'>overriding</span> &nbsp; 부모 클래스와 자식 클래스에 이름, 반환값의 자료형, 전달인자가 모두 동일한 메서드
 <br>
 <br>
 
@@ -382,11 +382,11 @@
 
 <h4> interface 상속</h4>
 
-<span style='color:red;'>interface</span> &nbsp; 상수와 추상 메소드로만 구성되며, 이들의 접근권한은 모두 public 
+<span style='color:red;'>interface</span> &nbsp; 상수와 abstract method로만 구성되며, 이들의 접근권한은 모두 public 
 <br>
 <br><span style='color:red;'>implements</span> &nbsp; 부모 인터페이스의 모든 추상 메서드를 상속받아 자식 클래스에서 구현
 <br>
-<br><span style='color:red;'>추상메서드</span> &nbsp; 메서드 이름, 반환자료형, 전달인자만 명시되고 실행 내용은 없는 메서드 
+<br><span style='color:red;'>abstract method</span> &nbsp; 이름, 반환자료형, 전달인자만 명시되고 실행 내용은 구현되어 있지 않은 추상 메소드 
 <br>
 <br>
 
@@ -532,6 +532,55 @@
 		</td>
 	</tr>
 </table>
+
+<h4> 다형성 </h4>
+
+<span style='color:red;'>다형성</span> &nbsp; 메서드 호출시 참조하는 클래스 객체에 따라 다른 메서드를 호출 가능 
+<br>부모 클래스/인터페이스의 메서드를 자식 클래스에서 오버라이딩하면, 메서드 호출시 자식 클래스의 메서드 실행   
+<br>&nbsp;
+
+<table style='width:790px; margin:0; padding:10px; border:1px solid #bcbcbc; font-size: 14px;'>
+	<tr>
+		<td>
+			RemoteControl remocon = new TV();
+		</td>
+	</tr>
+	<tr style='background-color:skyblue;'>
+		<td>
+			remocon.clickUp();
+		</td>
+		<td>
+			TV 채널 + 1 실행  
+		</td>
+	</tr>
+	<tr>
+		<td>
+			remocon = new RoboticVacuumCleaner();
+		</td>
+	</tr>
+	<tr style='background-color:skyblue;'>
+		<td>
+			remocon.clickUp();
+		</td>
+		<td>
+			이동방향 직진 실행 
+		</td>
+	</tr>
+	<tr>
+		<td>
+			remocon = new AirConditioner();
+		</td>
+	</tr>
+	<tr style='background-color:skyblue;'>
+		<td>
+			remocon.clickUp();
+		</td>
+		<td>
+			희망온도 +1 실행 
+		</td>
+	</tr>
+</table>
+<br>
 
 <table style='width:790px; margin:0; padding:10px; border:1px solid #bcbcbc; font-size: 14px;'>
 	<tr>
@@ -740,56 +789,6 @@
 	</tr>
 </table>
 
-
-<h4> 다형성 </h4>
-
-<span style='color:red;'>다형성</span> &nbsp; 메서드 호출시 참조하는 클래스 객체에 따라 다른 메서드를 호출 가능 
-<br>부모 클래스/인터페이스의 메서드를 자식 클래스에서 오버라이딩하면, 메서드 호출시 자식 클래스의 메서드 실행   
-<br>&nbsp;
-
-<table style='width:790px; margin:0; padding:10px; border:1px solid #bcbcbc; font-size: 14px;'>
-	<tr>
-		<td>
-			RemoteControl remocon = new TV();
-		</td>
-	</tr>
-	<tr style='background-color:skyblue;'>
-		<td>
-			remocon.clickUp();
-		</td>
-		<td>
-			TV 채널 + 1 실행  
-		</td>
-	</tr>
-	<tr>
-		<td>
-			remocon = new RoboticVacuumCleaner();
-		</td>
-	</tr>
-	<tr style='background-color:skyblue;'>
-		<td>
-			remocon.clickUp();
-		</td>
-		<td>
-			이동방향 직진 실행 
-		</td>
-	</tr>
-	<tr>
-		<td>
-			remocon = new AirConditioner();
-		</td>
-	</tr>
-	<tr style='background-color:skyblue;'>
-		<td>
-			remocon.clickUp();
-		</td>
-		<td>
-			희망온도 +1 실행 
-		</td>
-	</tr>
-</table>
-<br>
-				
 <table style='width:790px; margin:0; padding:10px; border:1px solid #bcbcbc; font-size: 14px;'>
 	<tr>
 		<td>
@@ -869,12 +868,12 @@
 
 <h4>abstract 클래스</h4>
 
-<span style='color:red;'>abstract 클래스</span> &nbsp; abstract 메서드를 포함하는 클래스
+<span style='color:red;'>abstract class</span> &nbsp; abstract method를 포함하는 클래스
 <br>메서드가 모두 구현되지 않아 객체 생성 불가능하고, 메서드를 모두 구현한 자식 클래스의 객체는 생성 가능
 
  
 <br>
-<br><span style='color:red;'>abstract 메서드</span> &nbsp; 선언되어 있으나 구현되어 있지 않은 추상 메소드
+<br><span style='color:red;'>abstract method</span> &nbsp; 이름, 반환자료형, 전달인자만 명시되고 실행 내용은 구현되어 있지 않은 추상 메소드 
 <br> &nbsp;
 
 <table style='width:790px; margin:0; padding:10px; border:1px solid #bcbcbc; font-size: 14px;'>
@@ -940,7 +939,9 @@
 		</td>
 	</tr>
 </table>
+<br>
 
+<br>
 				<br><br><br><br><br><br><br><br> &nbsp; 
 			</div>
 		</div>
